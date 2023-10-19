@@ -7,7 +7,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.example.navigationmenu.R
 import com.example.navigationmenu.ui.view.favorite.FavoriteFragment
-import com.example.navigationmenu.ui.view.home.HomeFragment
+import com.example.navigationmenu.ui.view.home.controller.fragment.HomeFragment
 import com.example.navigationmenu.ui.view.profile.ProfileFragment
 import com.example.navigationmenu.ui.view.setting.SettingFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
