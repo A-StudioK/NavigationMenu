@@ -1,18 +1,15 @@
 package com.example.navigationmenu.ui
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.example.navigationmenu.R
-import com.example.navigationmenu.data.network.RetrofitClient
 import com.example.navigationmenu.ui.favorite.controller.fragment.FavoriteFragment
 import com.example.navigationmenu.ui.home.controller.fragment.HomeFragment
 import com.example.navigationmenu.ui.profile.controller.fragment.ProfileFragment
 import com.example.navigationmenu.ui.setting.controller.fragment.SettingFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
