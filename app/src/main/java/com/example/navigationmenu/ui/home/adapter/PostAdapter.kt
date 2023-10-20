@@ -1,4 +1,4 @@
-package com.example.navigationmenu.ui.view.home.adapter
+package com.example.navigationmenu.ui.home.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -42,5 +42,4 @@ class PostAdapter(private val posts: List<Post>, private val itemClickListener: 
     override fun getItemCount(): Int {
         return posts.size
     }
-
 }

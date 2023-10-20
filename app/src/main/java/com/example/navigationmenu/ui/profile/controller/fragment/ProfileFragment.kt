@@ -1,4 +1,4 @@
-package com.example.navigationmenu.ui.view.setting
+package com.example.navigationmenu.ui.profile.controller.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.navigationmenu.R
 
 
-class SettingFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -16,6 +16,6 @@ class SettingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setting, container, false)
+        return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 }

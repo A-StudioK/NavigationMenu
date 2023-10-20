@@ -1,4 +1,4 @@
-package com.example.navigationmenu.ui.view.favorite
+package com.example.navigationmenu.ui.setting.controller.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.navigationmenu.R
 
 
-class FavoriteFragment : Fragment() {
+class SettingFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -16,6 +16,6 @@ class FavoriteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorite, container, false)
+        return inflater.inflate(R.layout.fragment_setting, container, false)
     }
 }

@@ -12,6 +12,9 @@ interface PostInterface {
     @GET("/posts")
     fun getAllPosts(): Call<List<Post>>
 
+    @GET("/posts/{id}")
+    fun getPostById(@Path("id") postId: Int): Call<Post>
+
     @POST("/posts")
     fun insertPost(@Body post: Post): Call<Post>
 

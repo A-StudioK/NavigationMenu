@@ -1,4 +1,4 @@
-package com.example.navigationmenu.ui.view.home.adapter
+package com.example.navigationmenu.ui.home.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -9,9 +9,15 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.example.navigationmenu.R
 import com.example.navigationmenu.data.model.Post
+import com.example.navigationmenu.data.network.RetrofitClient
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class PostDetailAdapter(private val post: Post) : Adapter<PostDetailAdapter.ViewHolder>() {
+
+class PostDetailAdapter(private val post: Post, private val fabClickListener: PostDetailAdapter.OnFabFavoriteClickListener) : Adapter<PostDetailAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    interface OnFabFavoriteClickListener {
+        fun onFabFavoriteClicked(post: Post)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.prototype_post_detail, parent, false)
@@ -24,6 +30,10 @@ class PostDetailAdapter(private val post: Post) : Adapter<PostDetailAdapter.View
         holder.itemView.findViewById<TextView>(R.id.tvIdDetail).text = "ID: " + post.id.toString()
         holder.itemView.findViewById<TextView>(R.id.tvTitleDetail).text = "Title: " + post.title
         holder.itemView.findViewById<TextView>(R.id.tvBodyDetail).text = "Body: " + post.body
+
+        holder.itemView.findViewById<FloatingActionButton>(R.id.fabFavorite).setOnClickListener {
+            fabClickListener.onFabFavoriteClicked(post)
+        }
     }
 
     override fun getItemCount(): Int {
