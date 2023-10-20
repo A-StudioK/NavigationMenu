@@ -1,4 +1,4 @@
-package com.example.navigationmenu.ui.view.home.controller.fragment
+package com.example.navigationmenu.ui.home.controller.fragment
 
 import android.content.Context
 import android.content.Intent
@@ -9,13 +9,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.navigationmenu.R
 import com.example.navigationmenu.data.model.Post
 import com.example.navigationmenu.data.network.RetrofitClient
-import com.example.navigationmenu.ui.view.home.adapter.PostAdapter
-import com.example.navigationmenu.ui.view.home.adapter.PostDetailAdapter
+import com.example.navigationmenu.ui.home.adapter.PostAdapter
+import com.example.navigationmenu.ui.home.adapter.PostDetailAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.Call
 import retrofit2.Callback
@@ -62,17 +63,14 @@ class HomeFragment : Fragment(), PostAdapter.OnItemClickListener {
     @Suppress("DEPRECATION")
     override fun onItemClicked(post: Post) {
         val sendPostDetail = Bundle()
-        sendPostDetail.putInt("userId", post.userId)
         sendPostDetail.putInt("id", post.id)
-        sendPostDetail.putString("title", post.title)
-        sendPostDetail.putString("body", post.body)
 
         val flHomeDetail = HomeDetailFragment()
         flHomeDetail.arguments = sendPostDetail
 
-        val transaction = fragmentManager?.beginTransaction()
-        transaction?.replace(R.id.flFragmentX, flHomeDetail)
-        transaction?.addToBackStack(null)
-        transaction?.commit()
+        requireFragmentManager().beginTransaction()
+            .replace(R.id.flFragmentX, flHomeDetail)
+            .addToBackStack(null)
+            .commit()
     }
 }

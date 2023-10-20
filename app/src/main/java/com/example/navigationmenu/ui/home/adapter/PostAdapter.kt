@@ -1,4 +1,4 @@
-package com.example.navigationmenu.ui.view.home.adapter
+package com.example.navigationmenu.ui.home.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
