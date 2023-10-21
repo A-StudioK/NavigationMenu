@@ -9,18 +9,19 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.example.navigationmenu.R
 import com.example.navigationmenu.data.model.Post
-import com.example.navigationmenu.data.network.RetrofitClient
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class PostDetailAdapter(private val post: Post, private val fabClickListener: PostDetailAdapter.OnFabFavoriteClickListener) : Adapter<PostDetailAdapter.ViewHolder>() {
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+
     interface OnFabFavoriteClickListener {
         fun onFabFavoriteClicked(post: Post)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.prototype_post_detail, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.prototype_home_detail, parent, false)
         return ViewHolder(view)
     }
 
